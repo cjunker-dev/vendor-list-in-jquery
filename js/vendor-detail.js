@@ -1,11 +1,18 @@
 let vendor = null;
 
 $().ready(() => {
-    vendorDetail(5)
+    
+    $("button").click(() => {
+        let id = $("#vid").val();
+        vendorDetail(id)
         .done((vendor) => {
-            vendor = vendor;
             display(vendor);
         })
+        .fail((err) => {
+            alert("Vendor not found!");
+        });
+    });
+    
 });
 
 const display = (vendor) => {
@@ -16,6 +23,9 @@ const display = (vendor) => {
     $("#pcity").text(vendor.city);
     $("#pstate").text(vendor.state);
     $("#pnumber").text(vendor.number);
-    $("#pname").text(vendor.email);
+    $("#pzip").text(vendor.zip);
+    $("#pphone").text(vendor.phoneNumber ?? "NA");
+    $("#pemail").text(vendor.email ?? "NA");
+    
 
 }

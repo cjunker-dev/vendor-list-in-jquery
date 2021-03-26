@@ -36,3 +36,4 @@ const display = (vendors) => {
         tbody.append(tr);
     }
 }
+

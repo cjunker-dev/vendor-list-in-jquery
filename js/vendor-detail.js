@@ -15,7 +15,7 @@ const display = (vendor) => {
     $("#paddress").text(vendor.address);
     $("#pcity").text(vendor.city);
     $("#pstate").text(vendor.state);
-    $("#pname").text(vendor.email);
+    $("#pnumber").text(vendor.number);
     $("#pname").text(vendor.email);
 
 }

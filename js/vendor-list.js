@@ -28,11 +28,9 @@ const display = (vendors) => {
         //in one statement
         tr.append($(`<td>${vendor.code}</td>`));
         tr.append($(`<td>${vendor.name}</td>`));
-        tr.append($(`<td>${vendor.address}</td>`));
-        tr.append($(`<td>${vendor.city}</td>`));
-        tr.append($(`<td>${vendor.state}</td>`));
-        tr.append($(`<td>${vendor.zip}</td>`));
-        tr.append($(`<td>${vendor.phone}</td>`));
+        let tdAddr = $(`<td>${vendor.address}, ${vendor.city}, ${vendor.state} ${vendor.zip}</td>`);
+        tr.append(tdAddr);
+        tr.append($(`<td>${vendor.phoneNumber}</td>`));
         tr.append($(`<td>${vendor.email}</td>`));
 
         tbody.append(tr);

@@ -4,10 +4,10 @@
 
 $().ready(()=>{
     console.log("jQuery is ready!");
-    $("button").click(() => {
+    $("#create").click(() => {
 
-        let newVendor = {
-            id: $("#pid").val(),
+        let vendor = {
+            id: 0,
             code: $("#pcode").val(),
             name: $("#pname").val(),
             address: $("#paddress").val(),
@@ -17,18 +17,14 @@ $().ready(()=>{
             phoneNumber: $("#pphone").val(),
             email: $("#pemail").val()
         }
-        console.log(newVendor);
-        $.ajax({
-            method: "POST",
-            url: url,
-            data: JSON.stringify(newVendor),
-            contentType: 'application/json'
-    })
-        .done((res)=> {
-            console.log(res);
-        })
-        .fail((err) => {
-            console.error(err);
-        });
+        console.log(vendor);
+        console.debug("vendor before:", vendor);
+        vendorCreate(vendor)
+            .done((res)=> {
+                console.log("Create successful:",res);
+            })
+            .fail((err) => {
+                console.error("Create failed:",err);
+            });
     });
 });

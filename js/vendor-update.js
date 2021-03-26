@@ -52,6 +52,5 @@ const display = (vendor) => {
     $("#pnumber").val(vendor.number);
     $("#pzip").val(vendor.zip);
     $("#pphone").val(vendor.phoneNumber ?? "NA");
-    $("#pemail").val(vendor.email ?? "NA");
-
+    $("#pemail").val(vendor.email ?? "NA");-
     }
